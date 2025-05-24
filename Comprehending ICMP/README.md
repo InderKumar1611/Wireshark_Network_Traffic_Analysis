@@ -1,55 +1,139 @@
-# Network Protocol Analysis with Wireshark and Python
+# 🧪 Network Protocol Analysis with Wireshark and Python
 
-## Objective:
+## 📌 Project Overview
 
-The objective of this project is to analyze network protocols using Wireshark and Python scripting. Specifically, we'll focus on understanding ICMP (Internet Control Message Protocol) and IPv6 Neighbor Discovery Protocol (NDP) using captured network traffic.
+This project explores network protocol analysis using **Wireshark** and **Python scripting**. The focus is on analyzing key network protocols — **ICMP (Internet Control Message Protocol)**, **MPLS (Multiprotocol Label Switching)**, and **IPv6 Neighbor Discovery Protocol (NDP)** — through real-world traffic captures.
 
-## Tools Required:
+By leveraging tools like **Wireshark** and the **pyshark** Python library, this project demonstrates how to extract, analyze, and visualize protocol behaviors to gain deeper insights into network communications.
 
-- Wireshark: A network protocol analyzer.
-- Python 3.x: For scripting and data analysis.
-- Libraries: pyshark (a Python wrapper for Wireshark) and other necessary libraries.
+---
 
-## Steps:
+## 🛠️ Tools & Technologies
 
-1. Capture Network Traffic:
+* **Wireshark** – Network packet capture and analysis tool
+* **Python 3.x** – For scripting and protocol parsing
+* **pyshark** – A Python wrapper for Wireshark's tshark utility
+* **matplotlib / seaborn** – For data visualization
+* Optional: Interactive visualization tools or dashboard libraries (e.g., Plotly, Dash)
 
-Use Wireshark to capture network traffic for ICMP and IPv6 NDP scenarios. Save the captures as .cap files.
+---
 
-2. Analyze ICMP Traffic:
+## 📋 Project Steps
 
-- Load the icmp.fragmented.cap file into Wireshark.
-- Identify ICMP packets and analyze their structure, including fragmented packets.
-- Use Python with the pyshark library to extract and analyze ICMP packets programmatically.
-- Display relevant statistics and information about ICMP traffic.
+### 1. Capture Network Traffic
 
-3. Analyze MPLS-Traceroute Traffic:
+* Use Wireshark to collect traffic related to ICMP, MPLS-Traceroute, and IPv6 NDP.
+* Save the capture sessions as `.cap` files for analysis:
 
-- Load the traceroute_MPLS.cap file into Wireshark.
-- Analyze the traceroute packets and understand how MPLS (Multiprotocol - Label Switching) affects the routing.
-- Utilize Python and pyshark to extract MPLS-related information and analyze the traceroute packets.
-- Display MPLS-related statistics and insights.
+  * `icmp.fragmented.cap`
+  * `traceroute_MPLS.cap`
+  * `IPv6_NDP.cap`
 
-4. Analyze IPv6 NDP Traffic:
+---
 
-- Load the IPv6_NDP.cap file into Wireshark.
-- Identify IPv6 Neighbor Discovery Protocol packets and understand their purpose.
-- Use Python and pyshark to extract NDP packets and analyze their contents programmatically.
-- Display NDP-related statistics and insights.
+### 2. ICMP Packet Analysis
 
-5. Integration and Reporting:
+* Open `icmp.fragmented.cap` in Wireshark and inspect ICMP packet structure and fragmentation.
+* Write Python scripts using `pyshark` to:
 
-- Combine the analysis from all three scenarios (ICMP, MPLS-Traceroute, and IPv6 NDP).
-- Generate a comprehensive report summarizing the findings, including packet statistics, protocol behavior, and any noteworthy observations.
-- Utilize Python libraries like matplotlib or seaborn to create visualizations for better understanding.
-Optionally, create interactive dashboards or visualizations for deeper exploration.
+  * Parse and extract ICMP packets
+  * Identify fragmented packets
+  * Calculate and display ICMP-related statistics (e.g., packet counts, types, fragmentation details)
 
-## Conclusion:
+---
 
+### 3. MPLS Traceroute Analysis
 
-In conclusion, this project offers a practical exploration of network protocol analysis through the combined use of Wireshark and Python. By dissecting actual network traffic captures, participants gain valuable insights into the intricacies of ICMP, MPLS, and IPv6 NDP protocols. This hands-on approach not only enhances understanding of network communications but also equips individuals with valuable troubleshooting skills. Through this project, participants can delve deeper into the nuances of network behavior, empowering them to make informed decisions and effectively manage network infrastructures.
+* Load `traceroute_MPLS.cap` in Wireshark to observe how MPLS affects routing paths.
+* Using `pyshark`:
 
+  * Extract MPLS-labeled packets
+  * Analyze label stack entries, TTL values, and traceroute hops
+  * Output key MPLS-related metrics and patterns
 
+---
 
+### 4. IPv6 NDP Analysis
 
+* Analyze `IPv6_NDP.cap` to identify Neighbor Solicitation and Advertisement messages.
+* Use Python scripts to:
 
+  * Parse NDP packet contents (e.g., source/target addresses, options)
+  * Categorize and count different NDP message types
+  * Summarize IPv6 network discovery behavior
+
+---
+
+### 5. Integration & Reporting
+
+* Merge insights from ICMP, MPLS, and NDP analyses.
+* Create a unified Python report:
+
+  * Display protocol-specific stats and summaries
+  * Generate visualizations (using matplotlib/seaborn) for easier interpretation
+  * (Optional) Build interactive dashboards for deeper data exploration
+
+---
+
+## 📈 Example Outputs
+
+* ICMP Type/Code distribution bar charts
+* MPLS label stack visualizations
+* IPv6 NDP message flow diagrams
+* Fragmentation and hop-count statistics
+
+---
+
+## ✅ Conclusion
+
+This project offers a practical hands-on experience in network protocol analysis, combining packet inspection with Python automation. By working with actual packet captures, you'll gain:
+
+* A deeper understanding of protocol internals
+* Experience in dissecting and interpreting network data
+* The ability to automate network analysis for faster troubleshooting and reporting
+
+Whether you're a network engineer, cybersecurity analyst, or learner, this project enhances your ability to investigate and understand real-world network behavior.
+
+---
+
+## 📁 File Structure (Example)
+
+```
+.
+├── captures/
+│   ├── icmp.fragmented.cap
+│   ├── traceroute_MPLS.cap
+│   └── IPv6_NDP.cap
+├── analysis/
+│   ├── icmp_analysis.py
+│   ├── mpls_analysis.py
+│   ├── ndp_analysis.py
+│   └── report_generator.py
+├── visualizations/
+│   └── *.png
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## 🛆 Installation & Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/network-protocol-analysis.git
+   cd network-protocol-analysis
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Add your `.cap` files to the `captures/` directory and run the analysis scripts.
+
+---
+
+##
